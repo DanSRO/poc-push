@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-//import com.aulafirebase.pocfcm.dto.PushNotificationRequestDTO;
+import com.aulafirebase.pocfcm.dto.PushNotificationRequestDTO;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -29,7 +29,7 @@ public class FCMService {
         FirebaseOptions options = FirebaseOptions.builder().setCredentials(GoogleCredentials.getApplicationDefault()).build();
         FirebaseApp.initializeApp(options);
     }
-/*
+
     public void sendMessageToToken(PushNotificationRequestDTO request) throws InterruptedException, ExecutionException {
         Message message = getPreconfiguredMessageToToken(request);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -49,5 +49,5 @@ public class FCMService {
     private Message.Builder getPreconfiguredMessageBuilder(PushNotificationRequestDTO request) {
         Notification notification = Notification.builder().setTitle(request.getTitle()).setBody(request.getMessage()).build();
         return Message.builder().setNotification(notification);
-    }*/
+    }
 }
